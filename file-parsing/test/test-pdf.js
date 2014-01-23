@@ -20,7 +20,7 @@ var TEST_PDF_FILE = './test/CDW_QUOTE_ANON.PDF';
 
 describe('PDF Parsing', function() {
     it('should parse the pdf and return a valid structure', function (callback) {
-        // there are 38 items in the inventory
+        // there are 34 items in the inventory
         parser.parse(TEST_PDF_FILE, function (err, results) {
             assert.ifError(err);
             assert(results && results.items && results.items.length > 0);
@@ -28,11 +28,11 @@ describe('PDF Parsing', function() {
         });
     });
     it('should parse invoice items from the pdf', function (callback) {
-        // there are 38 items in the inventory
+        // there are 34 items in the inventory
         parser.parse(TEST_PDF_FILE, function (err, results) {
             assert.ifError(err);
             assert(results && results.items);
-            assert.equal(results.items.length, 38);
+            assert.equal(results.items.length, 34);
             assert.equal(results.items[0].quantity, 3);
             assert.equal(results.items[0].unitPrice, 2100);
             assert.equal(results.items[0].extendedPrice, 6300);
